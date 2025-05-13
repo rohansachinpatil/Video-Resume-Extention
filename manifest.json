@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Video Resume Tracker",
+    "version": "1.0",
+    "description": "Automatically resumes videos from where you left off.",
+    "permissions": ["storage", "tabs"],
+    "host_permissions": ["*://*/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    }
+  }
+  
